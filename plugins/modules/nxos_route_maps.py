@@ -300,6 +300,7 @@ options:
                       - Set gateway IP for type 5 EVPN routes.
                       - Cannot set ip and use-nexthop in the same route-map sequence.
                     type: dict
+                    mutually_exclusive: [["ip", "use_nexthop"]]
                     suboptions:
                       ip:
                         description: Gateway IP address.
@@ -457,7 +458,7 @@ EXAMPLES = """
               ipv6:
                 address:
                   prefix_lists: AllowIPv6Prefix
-              interfaces: "{{ nxos_int1 }}"
+              interfaces: Ethernet1/1
             set:
               as_path:
                 prepend:
@@ -1352,7 +1353,7 @@ EXAMPLES = """
               ipv6:
                 address:
                   prefix_lists: AllowIPv6Prefix
-              interfaces: "{{ nxos_int1 }}"
+              interfaces: Ethernet1/1
             set:
               as_path:
                 prepend:
@@ -1436,7 +1437,7 @@ EXAMPLES = """
 
 - name: Parse externally provided route-maps configuration
   cisco.nxos.nxos_route_maps:
-    running_config: "{{ lookup('file', './fixtures/parsed.cfg') }}"
+    running_config: ""
     state: parsed
 
 # Task output (redacted)
@@ -1578,35 +1579,6 @@ EXAMPLES = """
 #               - '65569'
 #           comm_list: BGPCommunity
 #
-"""
-
-RETURN = """
-before:
-  description: The configuration prior to the model invocation.
-  returned: always
-  type: dict
-  sample: >
-    The configuration returned will always be in the same format
-     of the parameters above.
-after:
-  description: The resulting configuration model invocation.
-  returned: when changed
-  type: dict
-  sample: >
-    The configuration returned will always be in the same format
-     of the parameters above.
-commands:
-  description: The set of commands pushed to the remote device.
-  returned: always
-  type: list
-  sample:
-    - "route-map rmap1 permit 10"
-    - "match as-number 65564"
-    - "match as-path Allow40"
-    - "match ip address acl_1"
-    - "description rmap1-10-permit"
-    - "route-map rmap1 deny 20"
-    - "match community BGPCommunity1 BGPCommunity2"
 """
 
 from ansible.module_utils.basic import AnsibleModule

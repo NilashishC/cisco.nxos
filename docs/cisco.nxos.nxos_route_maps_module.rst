@@ -2514,7 +2514,7 @@ Examples
                   ipv6:
                     address:
                       prefix_lists: AllowIPv6Prefix
-                  interfaces: "{{ nxos_int1 }}"
+                  interfaces: Ethernet1/1
                 set:
                   as_path:
                     prepend:
@@ -3409,7 +3409,7 @@ Examples
                   ipv6:
                     address:
                       prefix_lists: AllowIPv6Prefix
-                  interfaces: "{{ nxos_int1 }}"
+                  interfaces: Ethernet1/1
                 set:
                   as_path:
                     prepend:
@@ -3493,7 +3493,7 @@ Examples
 
     - name: Parse externally provided route-maps configuration
       cisco.nxos.nxos_route_maps:
-        running_config: "{{ lookup('file', './fixtures/parsed.cfg') }}"
+        running_config: ""
         state: parsed
 
     # Task output (redacted)
@@ -3637,74 +3637,6 @@ Examples
     #
 
 
-
-Return Values
--------------
-Common return values are documented `here <https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values>`_, the following are the fields unique to this module:
-
-.. raw:: html
-
-    <table border=0 cellpadding=0 class="documentation-table">
-        <tr>
-            <th colspan="1">Key</th>
-            <th>Returned</th>
-            <th width="100%">Description</th>
-        </tr>
-            <tr>
-                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="return-"></div>
-                    <b>after</b>
-                    <a class="ansibleOptionLink" href="#return-" title="Permalink to this return value"></a>
-                    <div style="font-size: small">
-                      <span style="color: purple">dictionary</span>
-                    </div>
-                </td>
-                <td>when changed</td>
-                <td>
-                            <div>The resulting configuration model invocation.</div>
-                    <br/>
-                        <div style="font-size: smaller"><b>Sample:</b></div>
-                        <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">The configuration returned will always be in the same format
-     of the parameters above.</div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="return-"></div>
-                    <b>before</b>
-                    <a class="ansibleOptionLink" href="#return-" title="Permalink to this return value"></a>
-                    <div style="font-size: small">
-                      <span style="color: purple">dictionary</span>
-                    </div>
-                </td>
-                <td>always</td>
-                <td>
-                            <div>The configuration prior to the model invocation.</div>
-                    <br/>
-                        <div style="font-size: smaller"><b>Sample:</b></div>
-                        <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">The configuration returned will always be in the same format
-     of the parameters above.</div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="return-"></div>
-                    <b>commands</b>
-                    <a class="ansibleOptionLink" href="#return-" title="Permalink to this return value"></a>
-                    <div style="font-size: small">
-                      <span style="color: purple">list</span>
-                    </div>
-                </td>
-                <td>always</td>
-                <td>
-                            <div>The set of commands pushed to the remote device.</div>
-                    <br/>
-                        <div style="font-size: smaller"><b>Sample:</b></div>
-                        <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">[&#x27;route-map rmap1 permit 10&#x27;, &#x27;match as-number 65564&#x27;, &#x27;match as-path Allow40&#x27;, &#x27;match ip address acl_1&#x27;, &#x27;description rmap1-10-permit&#x27;, &#x27;route-map rmap1 deny 20&#x27;, &#x27;match community BGPCommunity1 BGPCommunity2&#x27;]</div>
-                </td>
-            </tr>
-    </table>
-    <br/><br/>
 
 
 Status
