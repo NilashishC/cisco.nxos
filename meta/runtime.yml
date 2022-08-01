@@ -1,6 +1,12 @@
 ---
 requires_ansible: ">=2.9.10"
 plugin_routing:
+  cliconf:
+    nxos:
+      redirect: cisco.nxos.nxos
+  terminal:
+    nxos:
+      redirect: cisco.nxos.nxos
   action:
     nxos_aaa_server:
       redirect: cisco.nxos.nxos
