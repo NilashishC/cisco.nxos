@@ -10,7 +10,7 @@ on:  # yamllint disable-line rule:truthy
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '* * * * *'
 
 
 jobs:
@@ -20,11 +20,11 @@ jobs:
     uses: ansible-network/github_actions/.github/workflows/changelog.yml@main
     if: github.event_name != 'schedule'
   sanity:
-    uses: ansible-network/github_actions/.github/workflows/sanity.yml@main
+    uses: NilashishC/github_actions/.github/workflows/sanity.yml@main
   unit-galaxy:
-    uses: ansible-network/github_actions/.github/workflows/unit_galaxy.yml@main
+    uses: NilashishC/github_actions/.github/workflows/unit_galaxy.yml@main
   unit-source:
-    uses: ansible-network/github_actions/.github/workflows/unit_source.yml@main
+    uses: NilashishC/github_actions/.github/workflows/unit_source.yml@main
     with:
       collection_pre_install: >-
         git+https://github.com/ansible-collections/ansible.utils.git
