@@ -15,7 +15,7 @@ on:  # yamllint disable-line rule:truthy
 
 jobs:
   unit-source:
-    uses: NilashishC/github_actions/.github/workflows/updated_units.yml@main
+    uses: NilashishC/cisco.nxos/.github/workflows/updated_units.yml@main
     with:
       collection_pre_install: >-
         git+https://github.com/ansible-collections/ansible.utils.git
