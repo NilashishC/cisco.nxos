@@ -7,6 +7,7 @@
 
 The Ansible Cisco NX-OS collection includes a variety of Ansible content to help automate the management of Cisco NX-OS network appliances.
 
+
 The Cisco NX-OS connection plugins combined with Cisco NX-OS resource modules aligns the Cisco NX-OS experience with the other core networking platforms supported by Ansible.
 
 This collection has been tested against Cisco N9K-C9300v chassis running NX-OS 9.3.6.
