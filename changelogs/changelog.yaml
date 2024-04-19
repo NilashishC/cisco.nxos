@@ -1078,7 +1078,7 @@ releases:
   8.0.0:
     changes:
       bugfixes:
-        - nxos_facts - correct parse JSON output when multiple interfaces have IPv6
+        - nxos_facts - correctly parse JSON output when multiple interfaces have IPv6
           address assigned (https://github.com/ansible-collections/cisco.nxos/issues/771).
       major_changes:
         - Updated the minimum required ansible.netcommon version to 6.1.0 to support the cli_restore module.

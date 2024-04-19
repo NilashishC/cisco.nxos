@@ -22,7 +22,7 @@ Minor Changes
 Bugfixes
 --------
 
-- nxos_facts - correct parse JSON output when multiple interfaces have IPv6 address assigned (https://github.com/ansible-collections/cisco.nxos/issues/771).
+- nxos_facts - correctly parse JSON output when multiple interfaces have IPv6 address assigned (https://github.com/ansible-collections/cisco.nxos/issues/771).
 
 v7.0.0
 ======
