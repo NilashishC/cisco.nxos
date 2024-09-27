@@ -12,7 +12,8 @@ DOCUMENTATION = """
 module: nxos_command
 extends_documentation_fragment:
 - cisco.nxos.nxos
-author: Peter Sprygada (@privateip)
+author:
+  - Peter Sprygada (@privateip)
 notes:
 - Limited Support for Cisco MDS
 short_description: Run arbitrary command on Cisco NXOS devices
