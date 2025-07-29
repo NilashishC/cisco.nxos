@@ -24,7 +24,7 @@ jobs:
     uses: NilashishC/ansible-content-actions/.github/workflows/sanity.yaml@update_matrix
     with:
       extra_matrix_entries: |
-        [
+        '[
           {
             "description": "Sanity tests using ansible-core 2.16 and python 3.10",
             "factors": [
@@ -55,7 +55,7 @@ jobs:
             "name": "sanity-py3.12-2.16",
             "python": "3.12"
           },
-        ]
+        ]'
   unit-galaxy:
     uses: ansible/ansible-content-actions/.github/workflows/unit.yaml@main
   unit-source:
